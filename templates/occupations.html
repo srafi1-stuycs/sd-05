@@ -1,20 +1,35 @@
 <html>
   <head>
     <title>{{ title }}</title>
+    <style type="text/css" media="all">
+table, td {
+  border: 1px solid black;
+}
+    </style>
   </head>
   <body>
-    <h1>Occupations</h1>
-    <table>
-      {% for row in occupations %}
-      <tr>
-
-        <!--
-        {% for item in row %}
-        <td>{{item}}</td>
+    <center>
+      <h1>Occupations</h1>
+      <table>
+        {% for row in occupations %}
+        <tr>
+          {% for item in row[:-1] %}
+          <td>
+            {{item}}
+          </td>
+          {% endfor %}
+          {% if row[2] != 'Link' %}
+          <td>
+            <a href="{{ row[2] }}">Get started</a>
+          </td>
+          {% else %}
+          <td>
+            {{ row[2] }}
+          </td>
+          {% endif %}
+        </tr>
         {% endfor %}
-        -->
-      </tr>
-      {% endfor %}
-    </table>
+      </table>
+    </center>
   </body>
 </html>

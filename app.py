@@ -11,6 +11,9 @@ def read_csv():
             occupations.append(row)
         return occupations
 
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route('/occupations')
 def occupations():
