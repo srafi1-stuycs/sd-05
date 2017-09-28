@@ -2,7 +2,7 @@ import csv, occupation
 from flask import Flask, render_template
 app = Flask(__name__)
 
-
+# renders a link to the occupations page
 @app.route('/')
 def index():
     return render_template('index.html')

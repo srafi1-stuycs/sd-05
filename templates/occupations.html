@@ -17,20 +17,20 @@ table, td, th {
           <th>Link</th>
         </tr>
         <!-- The value of a key in the dictionary is a list
-             the 0th value of list is the percent
-             the 1st value of list is the link to the occupation -->
-        {% for occupation in occupations %}
-        <tr>
-          <td> {{ occupation }} </td>
-          <td> {{ occupations.get(occupation)[0] }} </td>
-          <td> <a href="{{ occupations.get(occupation)[1] }}">Get started!</a> </td>
-        </tr>
-        {% endfor %}
+          the 0th value of list is the percent
+          the 1st value of list is the link to the occupation -->
+          {% for occupation in occupations %}
+          <tr>
+            <td> {{ occupation }} </td>
+            <td> {{ occupations.get(occupation)[0] }} </td>
+            <td> <a href="{{ occupations.get(occupation)[1] }}">Get started!</a> </td>
+          </tr>
+          {% endfor %}
       </table>
-    {% if rand_occupation %}
+      {% if rand_occupation %}
       <br>
       Random occupation: <a href="{{ occupations.get(rand_occupation)[1] }}">{{ rand_occupation }}</a>
-    {% endif %}
+      {% endif %}
     </center>
   </body>
 </html>

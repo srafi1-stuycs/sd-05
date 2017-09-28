@@ -8,7 +8,7 @@ def read_csv():
     with open('data/occupations.csv', 'rU') as f:
         reader = csv.reader(f, delimiter=",", quotechar='"')
         for row in reader:
-            if row[0] == "Job Class":
+            if row[0] == "Job Class": # skips the title row
                 continue
             # The value of a key in the dictionary is a list
             # the 0th value of list is the percent
@@ -18,7 +18,7 @@ def read_csv():
 
 # returns a random occupation weighted by percent
 def ret_rand():
-    keys = occupation_dict.keys()
+    keys = occupation_dict.keys() # returns a list of all keys in the dict
     rand = random.random() * occupation_dict['Total'][0]
     #print rand
     for key in keys:
