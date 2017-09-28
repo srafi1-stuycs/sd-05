@@ -10,6 +10,9 @@ def read_csv():
         for row in reader:
             if row[0] == "Job Class":
                 continue
+            # The value of a key in the dictionary is a list
+            # the 0th value of list is the percent
+            # the 1st value of list is the link to the occupation
             occupation_dict[row[0]] = [float (row[1]), row[2]]
     return occupation_dict
 

@@ -8,6 +8,7 @@ def index():
     return render_template('index.html')
 
 
+# occupation.read_csv() returns a dictionary
 @app.route('/occupations')
 def occupations():
     return render_template('occupations.html',
