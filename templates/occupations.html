@@ -1,8 +1,8 @@
 <html>
   <head>
-    <title>{{ title }}</title>
+    <title>Occupations</title>
     <style type="text/css" media="all">
-table, td {
+table, td, th {
   border: 1px solid black;
 }
     </style>
@@ -11,22 +11,16 @@ table, td {
     <center>
       <h1>Occupations</h1>
       <table>
-        {% for row in occupations %}
         <tr>
-          {% for item in row[:-1] %}
-          <td>
-            {{item}}
-          </td>
-          {% endfor %}
-          {% if row[2] != 'Link' %}
-          <td>
-            <a href="{{ row[2] }}">Get started</a>
-          </td>
-          {% else %}
-          <td>
-            {{ row[2] }}
-          </td>
-          {% endif %}
+          <th>Job class</th>
+          <th>Percent</th>
+          <th>Link</th>
+        </tr>
+        {% for occupation in occupations %}
+        <tr>
+          <td> {{ occupation }} </td>
+          <td> {{ occupations.get(occupation)[0] }} </td>
+          <td> <a href="{{ occupations.get(occupation)[1] }}">Get started!</a> </td>
         </tr>
         {% endfor %}
       </table>

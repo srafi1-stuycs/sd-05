@@ -10,17 +10,18 @@ def read_csv():
         for row in reader:
             if row[0] == "Job Class":
                 continue
-            occupation_dict[row[0]] = float (row[1])
+            occupation_dict[row[0]] = [float (row[1]), row[2]]
+    return occupation_dict
 
 # returns a random occupation weighted by percent
 def ret_rand():
     keys = occupation_dict.keys()
-    rand = random.random() * occupation_dict['Total']
+    rand = random.random() * occupation_dict['Total'][0]
     #print rand
     for key in keys:
         if key == "Total":
             continue
-        rand -= occupation_dict[key]
+        rand -= occupation_dict[key][0]
         if rand <= 0:
             return key
     return 0;
