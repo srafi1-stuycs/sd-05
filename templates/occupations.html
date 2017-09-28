@@ -29,7 +29,7 @@ table, td, th {
       </table>
     {% if rand_occupation %}
       <br>
-      Random occupation: {{ rand_occupation }}
+      Random occupation: <a href="{{ occupations.get(rand_occupation)[1] }}">{{ rand_occupation }}</a>
     {% endif %}
     </center>
   </body>
